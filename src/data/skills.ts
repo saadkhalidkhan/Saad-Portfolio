@@ -1,4 +1,6 @@
-export const skillsCategories = [
+export type SkillCategory = { title: string; items: string[]; subtitle?: string }
+
+export const skillsCategories: SkillCategory[] = [
   {
     title: "Android Development",
     items: ["Dependency Injection (Hilt/Dagger)", "MVVM/MVI Patterns", "Android Architecture Components", "Material Design", "Jetpack Compose", "Android (Kotlin/Java)"],
