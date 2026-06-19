@@ -20,20 +20,31 @@ export function Contact() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }).toString(),
+      })
+
+      if (!response.ok) throw new Error('Form submission failed')
+
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
-      setTimeout(() => setSubmitStatus('idle'), 3000)
+      setTimeout(() => setSubmitStatus('idle'), 5000)
     }
   }
 
@@ -72,7 +83,7 @@ export function Contact() {
       icon: MapPin,
       label: 'Location',
       value: personalInfo.location,
-      href: '#',
+      href: null,
       color: 'hover:text-green-600'
     }
   ]
@@ -125,37 +136,59 @@ export function Contact() {
               <div>
                 <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Whether you're looking for a developer to collaborate on interesting projects, need help with technology solutions, or want to discuss potential opportunities, I'd love to hear from you. I'm always interested in learning new technologies and working on diverse projects.
+                  Whether you're hiring for a senior Android role, exploring fintech or AI-mobile collaboration, or want to discuss architecture and team leadership — I'd love to hear from you.
                 </p>
               </div>
 
               {/* Contact Methods */}
               <div className="space-y-4">
-                {contactMethods.map((method, index) => (
-                  <motion.a
-                    key={method.label}
-                    href={method.href}
-                    target={method.href.startsWith('http') ? '_blank' : '_self'}
-                    rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    initial={{ x: -20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className={cn(
-                      "flex items-center gap-4 p-4 bg-background rounded-lg border border-border",
-                      "hover:shadow-md transition-all duration-200 group",
-                      method.href !== '#' && "cursor-pointer"
-                    )}
-                  >
-                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-200">
-                      <method.icon className={cn("w-5 h-5 text-primary", method.color)} />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">{method.label}</p>
-                      <p className="text-sm text-muted-foreground">{method.value}</p>
-                    </div>
-                  </motion.a>
-                ))}
+                {contactMethods.map((method, index) => {
+                  const content = (
+                    <>
+                      <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-200">
+                        <method.icon className={cn("w-5 h-5 text-primary", method.color)} />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">{method.label}</p>
+                        <p className="text-sm text-muted-foreground">{method.value}</p>
+                      </div>
+                    </>
+                  )
+
+                  if (!method.href) {
+                    return (
+                      <motion.div
+                        key={method.label}
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-4 p-4 bg-background rounded-lg border border-border"
+                      >
+                        {content}
+                      </motion.div>
+                    )
+                  }
+
+                  return (
+                    <motion.a
+                      key={method.label}
+                      href={method.href}
+                      target={method.href.startsWith('http') ? '_blank' : '_self'}
+                      rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      initial={{ x: -20, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className={cn(
+                        "flex items-center gap-4 p-4 bg-background rounded-lg border border-border",
+                        "hover:shadow-md transition-all duration-200 group cursor-pointer"
+                      )}
+                    >
+                      {content}
+                    </motion.a>
+                  )
+                })}
               </div>
 
               {/* Availability Status */}
@@ -180,7 +213,20 @@ export function Contact() {
             <motion.div variants={itemVariants} className="bg-background rounded-xl p-8 border border-border">
               <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don't fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Name
