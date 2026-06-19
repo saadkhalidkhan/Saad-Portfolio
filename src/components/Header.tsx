@@ -26,11 +26,7 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+  const handleNavClick = () => {
     setIsMobileMenuOpen(false)
   }
 
@@ -46,35 +42,33 @@ export function Header() {
           : "bg-transparent"
       )}
     >
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-4" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
+          <a
+            href="#home"
             className="text-xl font-bold gradient-text"
           >
             Saad Khan
-          </motion.div>
+          </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <motion.button
+              <a
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
               >
                 {item.name}
-              </motion.button>
+              </a>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors duration-200"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav"
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5" />
@@ -84,8 +78,8 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         <motion.div
+          id="mobile-nav"
           initial={false}
           animate={{
             height: isMobileMenuOpen ? 'auto' : 0,
@@ -96,13 +90,14 @@ export function Header() {
         >
           <div className="py-4 space-y-2">
             {navigation.map((item) => (
-              <button
+              <a
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
+                onClick={handleNavClick}
                 className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-lg transition-colors duration-200"
               >
                 {item.name}
-              </button>
+              </a>
             ))}
           </div>
         </motion.div>

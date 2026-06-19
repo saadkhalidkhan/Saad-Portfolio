@@ -55,7 +55,7 @@ export function Footer() {
           className="mt-8 pt-8 border-t border-border text-center"
         >
           <p className="text-sm text-muted-foreground mb-2">
-            Open to opportunities in Germany, Malaysia, and Japan
+            Open to opportunities in Germany and Europe (EU Blue Card eligible)
           </p>
           <p className="text-xs text-muted-foreground">
             Built with modern web technologies • Optimized for performance • Responsive design
