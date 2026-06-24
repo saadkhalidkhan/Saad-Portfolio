@@ -1,68 +1,48 @@
 export const experience = [
   {
     id: 1,
-    company: "Pura (by PuraHealth)",
+    company: "Systems Limited",
     position: "Senior Android Engineer",
-    duration: "3 years",
-    period: "2021 - Present",
-    location: "Remote",
-    description: "Leading modular Compose development and architecture for health and wellness mobile applications.",
+    duration: "3 yrs 9 mos",
+    period: "Oct 2022 - Present",
+    location: "Lahore, Punjab, Pakistan · Hybrid",
+    description: "Leading delivery of the ABHI Bank (formerly FINCA Bank) Android banking application — a full-scale digital banking platform serving retail and business customers across Pakistan.",
     responsibilities: [
-      "Led Android team in developing scalable health and wellness applications",
-      "Architected modular Compose-based UI components",
-      "Implemented Clean Architecture patterns for maintainable codebase",
-      "Collaborated with cross-functional teams to deliver user-centric features",
-      "Mentored junior developers and established coding standards"
+      "Led end-to-end mobile and companion web application delivery for ABHI Bank's consumer banking product",
+      "Architected and developed scalable Android modules for account management, payments, transfers, and onboarding flows",
+      "Coordinated directly with client stakeholders and cross-functional teams (backend, QA, product, and design) to align releases with business milestones",
+      "Resolved complex data synchronization challenges between local device state, offline caches, and remote banking APIs",
+      "Drove Agile ceremonies, sprint planning, and release cadence to maintain predictable delivery in a regulated fintech environment",
+      "Mentored Android engineers on Kotlin best practices, code review standards, and production troubleshooting",
     ],
-    technologies: ["Kotlin", "Jetpack Compose", "Coroutines", "Clean Architecture", "Modular Design"],
+    technologies: ["Kotlin", "Android", "Jetpack", "REST APIs", "MVVM", "Agile/Scrum", "Data Sync", "FinTech"],
     achievements: [
-      "Delivered 3 major app releases with 99.9% crash-free rate",
-      "Reduced app startup time by 40% through architectural improvements",
-      "Led team of 4 Android developers"
-    ]
+      "Sustained production delivery for a high-traffic national banking application through rebranding from FINCA to ABHI Bank",
+      "Improved release stability by strengthening sync logic and error-handling across critical payment workflows",
+      "Established reusable patterns for modular feature delivery across mobile and web surfaces",
+    ],
   },
   {
     id: 2,
-    company: "JazzCash",
-    position: "Android Developer",
-    duration: "2 years",
-    period: "2019 - 2021",
-    location: "Karachi, Pakistan",
-    description: "Developed fintech mobile application serving millions of users across Pakistan.",
+    company: "Upgenics",
+    position: "Senior Android Engineer",
+    duration: "11 mos",
+    period: "Dec 2021 - Oct 2022",
+    location: "Lahore, Punjab, Pakistan · On-site",
+    description: "Senior engineer on Phonecheck — an Android and web platform for automated mobile device diagnostics used in refurbishment, resale, and quality-assurance workflows.",
     responsibilities: [
-      "Developed and maintained core payment features",
-      "Implemented secure transaction processing",
-      "Optimized app performance for large user base",
-      "Collaborated with backend teams for API integration",
-      "Ensured compliance with financial regulations"
+      "Owned key modules across the Phonecheck Android app and supporting web interfaces for device testing pipelines",
+      "Managed project lifecycle activities from requirements refinement through release and post-launch support",
+      "Collaborated with stakeholders to translate business needs into technical solutions for hardware diagnostics and reporting",
+      "Implemented system improvements to increase test throughput, result accuracy, and operator efficiency on the production floor",
+      "Participated actively in Agile Scrum delivery — daily standups, retrospectives, and iterative feature rollouts",
+      "Integrated device hardware APIs, sensor checks, and structured test result exports for downstream systems",
     ],
-    technologies: ["Kotlin", "Java", "RxJava", "Retrofit", "Room Database", "Security"],
+    technologies: ["Kotlin", "Android", "Java", "REST APIs", "Web Integration", "Hardware Diagnostics", "Agile/Scrum"],
     achievements: [
-      "Contributed to app serving 10M+ active users",
-      "Implemented biometric authentication reducing fraud by 30%",
-      "Optimized payment flow reducing transaction time by 25%"
-    ]
+      "Delivered diagnostic workflow enhancements that streamlined device grading for high-volume operations",
+      "Reduced turnaround time for test-result reporting through improved data capture and sync pipelines",
+      "Contributed to cross-platform consistency between Android diagnostics and web-based admin tooling",
+    ],
   },
-  {
-    id: 3,
-    company: "FINCA",
-    position: "Android Developer",
-    duration: "1.5 years",
-    period: "2017 - 2019",
-    location: "Islamabad, Pakistan",
-    description: "Built financial inclusion platform for underserved communities.",
-    responsibilities: [
-      "Developed microfinance and banking features",
-      "Implemented offline-first architecture for rural connectivity",
-      "Created multilingual support for diverse user base",
-      "Integrated with legacy banking systems",
-      "Conducted user research and testing"
-    ],
-    technologies: ["Java", "SQLite", "REST APIs", "Offline-first", "Multilingual"],
-    achievements: [
-      "Enabled financial services for 50K+ rural users",
-      "Implemented offline sync reducing data usage by 60%",
-      "Supported 5 local languages"
-    ]
-  }
 ]
