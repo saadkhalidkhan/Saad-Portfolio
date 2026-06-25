@@ -91,4 +91,26 @@ export const experience = [
       "Contributed to stable production releases during peak enrollment and examination periods",
     ],
   },
+  {
+    id: 5,
+    company: "Al-Khawarizmi Institute of Computer Science (KICS), UET Lahore",
+    position: "Research Assistant",
+    duration: "8 mos",
+    period: "Aug 2017 - Mar 2018",
+    location: "Lahore District, Punjab, Pakistan · On-site",
+    description: "Part-time research assistant on a data synchronization platform focused on reliable, real-time data transfer between distributed nodes — foundational work in mobile sync and systems integration.",
+    responsibilities: [
+      "Contributed to Java and Android development for prototype modules validating real-time sync algorithms",
+      "Supported design and implementation of data transfer pipelines between mobile clients and research backends",
+      "Assisted with QA processes including test case execution, regression logging, and defect triage",
+      "Collaborated with research staff on performance benchmarking and sync conflict resolution experiments",
+      "Documented technical findings and integration patterns for the research team's knowledge base",
+    ],
+    technologies: ["Java", "Android", "Data Synchronization", "REST APIs", "QA Testing", "Research Systems"],
+    achievements: [
+      "Delivered functional Android prototypes demonstrating real-time sync under variable network conditions",
+      "Supported peer-reviewed research activities with reliable test automation and structured QA reporting",
+      "Gained early expertise in distributed data consistency — a skill later applied across banking and enterprise apps",
+    ],
+  },
 ]
