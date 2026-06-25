@@ -34,7 +34,7 @@ export const featuredProjects = [
     name: "ABHI Bank",
     badge: "Production",
     image: "/images/projects/abhibank.png",
-    description: "Financial technology application providing digital payment solutions, money transfer services, and financial management tools for users.",
+    description: "National digital banking application (formerly FINCA Bank) providing account management, payments, transfers, and financial services. Led Android delivery at Systems Limited.",
     features: ["Digital Payments", "Money Transfer", "Financial Tools", "Secure Transactions"],
     technologies: ["Kotlin", "Android", "FinTech APIs", "Payment Processing", "Security"],
     liveDemo: "https://play.google.com/store/apps/details?id=com.finja.simsim",

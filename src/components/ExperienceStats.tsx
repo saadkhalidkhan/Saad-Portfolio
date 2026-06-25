@@ -18,7 +18,7 @@ export function ExperienceStats() {
           className="max-w-4xl mx-auto text-center"
         >
           <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
-            I have extensive experience developing production-ready Android applications across various industries including healthcare, fintech, telecommunications, and education.
+            I have extensive experience developing production-ready Android applications across banking, education, diagnostics, and enterprise — from ABHI Bank and IQ Prospects to PGC and Phonecheck.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {stats.map((stat, index) => (
