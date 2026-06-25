@@ -23,12 +23,12 @@ export const personalInfo = {
   ],
 
   journeyTitle: "My Journey",
-  journeyText: "My career spans fintech, healthcare, and enterprise — from FINCA and JazzCash to my current role at Pura, where I lead Android development for production apps serving large user bases.\n\nI've shipped 30+ production applications across 10+ industries, with deep expertise in Kotlin, Jetpack Compose, modular architecture, and performance optimization. Recently, I've been integrating AI and LLM capabilities into mobile workflows to enhance product experience.\n\nBased in Lahore and open to relocating to Germany and Europe, I bring both hands-on engineering depth and experience mentoring teams through complex delivery cycles.",
+  journeyText: "My career spans fintech, education, and enterprise — from research at KICS (UET Lahore) through Tower Technologies and SigmaTec, to Upgenics and my current role at Systems Limited, where I lead Android delivery for ABHI Bank (formerly FINCA Bank).\n\nI've shipped production applications across banking, diagnostics, education, and research — with deep expertise in Kotlin, REST integrations, data synchronization, and Agile delivery at scale.\n\nBased in Lahore and open to relocating to Germany and Europe, I bring both hands-on engineering depth and experience coordinating with clients and cross-functional teams through complex delivery cycles.",
 
   keyAchievements: [
-    { title: "30+ Production Apps", description: "Shipped Android applications across fintech, healthcare, telecom, and education" },
-    { title: "Fintech & Enterprise Scale", description: "Built high-performance apps at JazzCash, FINCA, and Pura serving millions of users" },
-    { title: "AI-Enabled Mobile", description: "Integrating LLM-driven capabilities and intelligent workflows into production Android apps" },
-    { title: "Technical Leadership", description: "Mentoring teams, driving architecture decisions, and owning end-to-end delivery" },
+    { title: "30+ Production Apps", description: "Shipped Android applications across fintech, education, diagnostics, and enterprise" },
+    { title: "ABHI Bank & FinTech Scale", description: "Leading Android delivery at Systems Limited for a national digital banking platform" },
+    { title: "Data Sync & Integration", description: "Deep experience in REST APIs, real-time sync, and offline-first mobile architectures" },
+    { title: "Client & Team Leadership", description: "Coordinating stakeholders, mentoring engineers, and driving Agile delivery end-to-end" },
   ],
 }
